@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Duplicate Numbers</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<main id="main-wrapper">
+		<section class="page-inner">
+			<h1>Check duplicate numbers</h1>
+			<form id="store-numbers">
+				<div class="input-field-wrapper">
+					<label for="duplicate-number-input">Enter numbers</label>
+					<div class="input-field-inner field-row">
+						<span class="input-info">
+							You can enter single, multiple or range of numbers
+						</span>
+						<input type="text" id="duplicate-number-input" placeholder="Enter Numbers" />
+					</div>
+					<div class="field-messages field-row">
+						<ul class="input-error-msg hidden error" id="duplicate-number-error">
+						</ul>
+						<div id="duplicate-warning" class="hidden warning">
+							WARNING Following numbers are duplicates and will not be add again:
+							<span id="duplicate-numbers-list"></span>
+						</div>
+					</div>
+				</div>
+				<div class="input-field-wrapper">
+					<input type="submit" value="Save Numbers" id="submit-numbers" class="btn" disabled />
+				</div>
+			</form>
+			<div id="existing-numbers-wrapper">
+				<div>
+					<h4>Saved Numbers:</h4>
+					<div id="existing-numbers"></div>
+				</div>
+				<button id="clear-existing" class="btn">Remove saved numbers</button>
+			</div>
+		</section>
+	</main>
+	<script type="text/javascript" src="script-compiled.js"></script>
+</body>
+
+</html>

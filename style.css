@@ -1,0 +1,110 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover,
+a:focus {
+	text-decoration: underline;
+}
+
+input {
+	border: 1px solid #adadad;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+
+.btn {
+	cursor: pointer;
+	background: #4883f1;
+	color: #fff;
+	border: 0;
+	padding: 10px;
+	border-radius: 5px;
+}
+
+.btn:hover,
+.btn:focus {
+	background: #0b40a5;
+}
+
+.btn[disabled] {
+	cursor: initial;
+	background: #b8c7e2;
+}
+.hidden {
+	display: none;
+}
+
+.warning,
+.error {
+	padding: 6px 12px;
+	border-radius: 2px;
+	font-size: 12px;
+}
+
+.warning {
+	background: #f5ed95;
+	color: #757039;
+}
+
+.error {
+	background: #ffd6d6;
+	color: #da4949;
+}
+
+#main-wrapper {
+	padding: 10px;
+}
+.page-inner{
+	max-width: 500px;
+	margin: auto;
+}
+.input-field-wrapper+.input-field-wrapper {
+	margin-top: 15px;
+}
+
+.input-info {
+	font-size: 12px;
+	color: #adadad;
+	font-style: italic;
+	margin: 0px 0 5px;
+	display: inline-block;
+}
+
+#duplicate-number-input {
+	width: 100%;
+}
+
+#duplicate-warning {
+	margin-top: 10px;
+}
+
+.input-error-msg li {
+	list-style-type: none;
+}
+
+.input-error-msg li+li {
+	margin-top: 4px;
+}
+
+#clear-existing {
+	margin-top: 12px;
+}
+
+#store-numbers {
+	padding: 15px;
+	border: 1px solid #eee;
+}
