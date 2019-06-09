@@ -1,11 +1,13 @@
 {
+  "homepage": "",
   "name": "duplicatenumbers",
   "version": "1.0.0",
   "description": "",
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "transpile": "npx babel --presets \"@babel/preset-env\" script.js --out-file script-compiled.js"
+    "transpile": "npx babel --presets \"@babel/preset-env\" script.js --out-file script-compiled.js",
+    "deploy": "gh-pages -d ./"
   },
   "author": "Malika Kaur Banga",
   "license": "ISC",
@@ -13,5 +15,8 @@
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5"
+  },
+  "dependencies": {
+    "gh-pages": "^2.0.1"
   }
 }

@@ -6,6 +6,40 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+if (!Array.prototype.fill) {
+  Object.defineProperty(Array.prototype, 'fill', {
+    value: function value(_value) {
+      // Steps 1-2.
+      if (this == null) {
+        throw new TypeError('this is null or not defined');
+      }
+
+      var O = Object(this); // Steps 3-5.
+
+      var len = O.length >>> 0; // Steps 6-7.
+
+      var start = arguments[1];
+      var relativeStart = start >> 0; // Step 8.
+
+      var k = relativeStart < 0 ? Math.max(len + relativeStart, 0) : Math.min(relativeStart, len); // Steps 9-10.
+
+      var end = arguments[2];
+      var relativeEnd = end === undefined ? len : end >> 0; // Step 11.
+
+      var _final = relativeEnd < 0 ? Math.max(len + relativeEnd, 0) : Math.min(relativeEnd, len); // Step 12.
+
+
+      while (k < _final) {
+        O[k] = _value;
+        k++;
+      } // Step 13.
+
+
+      return O;
+    }
+  });
+}
+
 (function () {
   var NUMBERS = 'numberList';
 
@@ -145,17 +179,21 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     }, {
       key: "getSavedNumbers",
       value: function getSavedNumbers() {
-        return JSON.parse(window.sessionStorage.getItem(NUMBERS));
+        return window.sessionStorage ? JSON.parse(window.sessionStorage.getItem(NUMBERS)) : [];
       }
     }, {
       key: "removeSavedNumbers",
       value: function removeSavedNumbers() {
-        window.sessionStorage.removeItem(NUMBERS);
+        if (window.sessionStorage) {
+          window.sessionStorage.removeItem(NUMBERS);
+        }
       }
     }, {
       key: "setSavedNumbers",
       value: function setSavedNumbers(numbers) {
-        window.sessionStorage.setItem(NUMBERS, JSON.stringify(numbers));
+        if (window.sessionStorage) {
+          window.sessionStorage.setItem(NUMBERS, JSON.stringify(numbers));
+        }
       }
     }, {
       key: "displaySavedNumbers",
